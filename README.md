@@ -11,6 +11,24 @@ Utilizei os conhecimentos adquiridos na Semana Omnistack, em especial a Semana O
 nodejs, cors, cross-env, express, knex, sqlite3, axios, react, react-dom, react-icons, react-router-dom, react-scripts 
 ```
 
+---
+
+### Usabilidade
+
+Na usabilidade existem duas telas. A primeira é a tela da Agenda, a _home_. Ela lista todos os contatos e suas informações, cada contato contém tem um botão de excluir e um botão para exibir mais informações.
+
+Logo em baixo do título da página, há um botão para adicionar um novo contato. Quando clicado, o usuário é redirecionado para a página de Novo Contato. 
+
+Para adicionar um contato é necessário __4 dados__:
+  - Nome
+  - Sobrenome
+  - Email
+  - Número
+
+Assim que é adicionado um novo contato, o usuário é redirecionado para a _home_(__Agenda__) que em seguida renderiza todos os contatos, inclusive o novo cotato adicionado que é renderizado em ultima posição.
+
+---
+
 #### BACKEND COM NODEJS
 No backend utilizei o __knex__ como banco de dados pela facilidade que tive em criar as _migrations_ e fazer as _connections_. Utilizei também o __express__ para as rotas. 
 
@@ -36,7 +54,7 @@ Em cada componente, utilizei alguns icones do _react-icons_.
 
 ---
 
-__Instalação__
+### Execução
 
 Faça um clone com __`git clone https://github.com/castelogui/agenda.git`__
 
