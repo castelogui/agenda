@@ -51,17 +51,19 @@ Para adicionar um contato é necessário __4 dados__:
   - Email
   - Número
 
-Assim que é adicionado um novo contato, o usuário é redirecionado para a _home_(__Agenda__) que em seguida renderiza todos os contatos, inclusive o novo cotato adicionado que é renderizado em ultima posição.
+Assim que é adicionado um novo contato, o usuário é redirecionado para a _home_(__Agenda__) que em seguida renderiza todos os contatos, inclusive o novo contato adicionado que é renderizado em ultima posição.
 
 ---
 
 ### Execução
 
-Faça um clone com __`git clone https://github.com/castelogui/agenda.git`__
+Faça um clone com `git clone https://github.com/castelogui/agenda.git`
 
-Coloque o serviço da _api_ em execução com __`npm start`__ de dentro do __backend__
+Crie o banco de dados com `knex migrate:latest`
 
-Coloque o _frontend_ em execução com __`npm start`__ de dentro do __frontend__  
+Coloque o serviço da _api_ em execução com `npm start` de dentro do __backend__
 
-E pronto, adicione quantos contatos quiser :sweat_smile: :sweat_smile:
+Coloque o _frontend_ em execução com `npm start` de dentro do __frontend__  
+
+E pronto, adicione quantos contatos quiser :sweat_smile:
 
