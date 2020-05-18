@@ -5,6 +5,15 @@ Aplicação de uma agenda com nodejs e react. Foi apenas um teste de aplicação
 Utilizei os conhecimentos adquiridos na Semana Omnistack, em especial a Semana Omnistack 11.0
 
 ---
+
+#### Tecnologias utilizadas:
+#### Backend com Nodejs
+#### Frontend com React
+#### Usabilidade
+#### Execução
+
+---
+
 #### Tecnologias utilizadas:
 
 ```
