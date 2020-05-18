@@ -1,11 +1,12 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable('contatos', function(table){
-     table.string('id').primary();
-     table.string('name').notNullable();
-     table.string('lastname').notNullable();
-     table.string('email').notNullable();
-     table.string('number').notNullable();
+   return knex.schema.createTable('contatos', function(table){  
+      table.increments();
+      
+      table.string('name').notNullable();
+      table.string('lastname').notNullable();
+      table.string('email').notNullable();
+      table.string('number').notNullable();
   });
 };
 

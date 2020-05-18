@@ -1,43 +1,37 @@
 const connection = require('../database/connection');
-const geraId  = require('../utils/geraId');
 
 module.exports = {
    async index(request, response){
-      const [count] = await connection('contatos').count();
+      const { id } = await request.params;
 
-      const contatos = await connection('contatos')
+      const contato = await connection('contatos')
+         .where('id', id)
          .select([
-            'contatos.id',
-            'contatos.name',
-            'contatos.lastname',
-            'contatos.email',
-            'contatos.number'
+            'id',
+            'name',
+            'lastname',
+            'email',
+            'number'
          ]);
-      response.header('X-Total-Count', count['count(*)']);
 
-      return response.json({contatos});
+      return response.json({contato});
    },
 
-   async create(request, response){
-      const {
-         name,
-         lastname,
-         email,
-         number,
-      } = request.body;
+   // async edit(request, response){
+   //    const [id] = await require.params;
 
-      const id = geraId();
+   //    const contato = await connection('contatos')
+   //       .where('id', id)
+   //       .select([
+   //          'id',
+   //          'name',
+   //          'lastname',
+   //          'email',
+   //          'number'
+   //       ]);
 
-      await connection('contatos').insert({
-         id,
-         name,
-         lastname,
-         email,
-         number,
-      })
-
-      return response.json({ id, name });
-   },
+   //    return response.body.json({contato});
+   // },
 
    async delete(request, response){
       const { id } = request.params;
