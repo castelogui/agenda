@@ -59,6 +59,10 @@ Assim que é adicionado um novo contato, o usuário é redirecionado para a _hom
 
 Faça um clone com `git clone https://github.com/castelogui/agenda.git`
 
+É necessário ter o [nodejs](https://nodejs.org/en/) instalado em sua máquina
+
+Instale as dependências nescessárias com `npm install` dentro do __backend__ e do __frontend__
+
 Crie o banco de dados com `knex migrate:latest`
 
 Coloque o serviço da _api_ em execução com `npm start` de dentro do __backend__
