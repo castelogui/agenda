@@ -25,13 +25,20 @@ export default function Agenda(){
       }
    }
    
-   function infoContato(id){
+   function moreInfo(id){
       var elemento = document.getElementById(id); 
-      
       if(elemento.style.display === 'block') {
          elemento.style.display = 'none'; 
       }else{
          elemento.style.display = 'block'; 
+      }
+   }
+   function rotateButton(id){
+      var elemento = document.getElementById(id); 
+      if(elemento.style.transform === 'rotateX(0)') {
+         elemento.style.transform = 'rotateX(90)'; 
+      }else{
+         elemento.style.transform = 'rotateX(-90)'; 
       }
    }    
    
@@ -52,17 +59,23 @@ export default function Agenda(){
                <li key={contato.id}>
                   <div className="contato-info">
                      <p className="name">{contato.name} {contato.lastname}</p>
-                     <div id={`info${contato.id}`}>
+                     <div className="more-info" id={`info${contato.id}`}>
                         <p className="email">{contato.email}</p>
                         <p className="number">{contato.number}</p>
                      </div>
                   </div>
-                  <button onClick={() => infoContato(`info${contato.id}`)} type="button">
-                     <FiMoreVertical size={20}/>
-                  </button>
-                  <button onClick={() => handleDeleteContato(contato.id)} type="button">
-                     <FiTrash2 size={20}/>
-                  </button>
+                  <FiMoreVertical 
+                     size={20}
+                     id = "button-more-info"
+                     onClick={() => rotateButton(id)}
+                     onClick={() => moreInfo(`info${contato.id}`)} 
+                     type="button"
+                  />
+                  <FiTrash2 
+                     size={20}
+                     onClick={() => handleDeleteContato(contato.id)}
+                     type="button"
+                  />
                </li>
             ))}
          </ul>
