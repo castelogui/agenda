@@ -33,14 +33,18 @@ export default function Agenda(){
          elemento.style.display = 'block'; 
       }
    }
-   function rotateButton(id){
-      var elemento = document.getElementById(id); 
-      if(elemento.style.transform === 'rotateX(0)') {
-         elemento.style.transform = 'rotateX(90)'; 
+   function rotateButton(idButton){
+      var elemento = document.getElementById(idButton); 
+      if(elemento.style.transform === 'rotate(-90deg)') {
+         elemento.style.transform = 'none'; 
       }else{
-         elemento.style.transform = 'rotateX(-90)'; 
+         elemento.style.transform = 'rotate(-90deg)'; 
       }
-   }    
+   } 
+   function more(id, idButton){
+      moreInfo(id)
+      rotateButton(idButton)
+   } 
    
 
    return (
@@ -59,21 +63,21 @@ export default function Agenda(){
                <li key={contato.id}>
                   <div className="contato-info">
                      <p className="name">{contato.name} {contato.lastname}</p>
-                     <div className="more-info" id={`info${contato.id}`}>
+                     <div className="more-info" id={`more-info${contato.id}`}>
                         <p className="email">{contato.email}</p>
                         <p className="number">{contato.number}</p>
+                        <FiTrash2 
+                           size={30}
+                           onClick={() => handleDeleteContato(contato.id)}
+                           type="button"
+                        />
                      </div>
                   </div>
                   <FiMoreVertical 
-                     size={20}
+                     className="FiMoreVertical"
+                     size={30}
                      id = "button-more-info"
-                     onClick={() => rotateButton(id)}
-                     onClick={() => moreInfo(`info${contato.id}`)} 
-                     type="button"
-                  />
-                  <FiTrash2 
-                     size={20}
-                     onClick={() => handleDeleteContato(contato.id)}
+                     onClick={() => more(`more-info${contato.id}`, "button-more-info")} 
                      type="button"
                   />
                </li>

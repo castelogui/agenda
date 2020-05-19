@@ -3,3 +3,6 @@ li .contato-info .more-info {
 
 }
 
+li #button-more-info .FiMoreVertical{
+   transform: none;
+}
