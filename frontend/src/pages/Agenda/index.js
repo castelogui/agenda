@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiTrash2, FiPlusCircle, FiMoreVertical } from 'react-icons/fi'
+import { FiTrash2, FiPlusCircle, FiChevronsRight } from 'react-icons/fi'
 
 import api from '../../services/api';
 
@@ -35,10 +35,10 @@ export default function Agenda(){
    }
    function rotateButton(idButton){
       var elemento = document.getElementById(idButton); 
-      if(elemento.style.transform === 'rotate(-90deg)') {
+      if(elemento.style.transform === 'rotate(90deg)') {
          elemento.style.transform = 'none'; 
       }else{
-         elemento.style.transform = 'rotate(-90deg)'; 
+         elemento.style.transform = 'rotate(90deg)'; 
       }
    } 
    function more(id, idButton){
@@ -73,11 +73,11 @@ export default function Agenda(){
                         />
                      </div>
                   </div>
-                  <FiMoreVertical 
-                     className="FiMoreVertical"
+                  <FiChevronsRight 
+                     className="FiChevronsRight"
                      size={30}
-                     id = "button-more-info"
-                     onClick={() => more(`more-info${contato.id}`, "button-more-info")} 
+                     id = {`button-more-info${contato.id}`}
+                     onClick={() => more(`more-info${contato.id}`, `button-more-info${contato.id}`)} 
                      type="button"
                   />
                </li>
