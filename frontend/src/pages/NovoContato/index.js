@@ -33,7 +33,6 @@ export default function NewContato(){
       }
    }
 
-   
    return (
       <div className="new-contato-container">
          <div className="content">

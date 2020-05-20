@@ -16,9 +16,11 @@ export default function Agenda(){
    }, []);
 
    async function handleDeleteContato(id){
-      
-      var elemento = document.getElementById(id)
-      elemento.style.transform = 'translateX(-20%)';
+      var elemento = document.getElementById(id);
+      elemento.style.transform = 'translate(-10%)';
+      elemento.style.backgroundColor = 'red';
+      elemento.style.color = 'white';
+
       
       try{
          await api.delete(`contato/${id}`);
@@ -45,15 +47,9 @@ export default function Agenda(){
          elemento.style.transform = 'rotate(90deg)'; 
       }
    } 
-   
-   function delay(idLi){
-      var elemento = document.getElementById(idLi)
-      elemento.style.transition = '0.7s';
-   }
    function more(id, idButton){
       moreInfo(id);
       rotateButton(idButton);
-      delay(id)
    } 
 
    return (
@@ -79,6 +75,7 @@ export default function Agenda(){
                   </div>
                   <button>
                      <FiTrash2 
+                        className="FiTrash2"
                         size={20}
                         onClick={() => handleDeleteContato(contato.id)}
                         type="button"
