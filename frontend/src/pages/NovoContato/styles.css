@@ -1,6 +1,6 @@
-/* .new-contato-container {
+.new-contato-container {
    display: inline-block;
-   margin: 20px 20% auto;
+   margin: 100px 20% auto;
    align-items: center;
    justify-content: center;
 }
@@ -32,14 +32,21 @@
 }
 
 .new-contato-container .content form {
-   width: 100%;
+   width: 50%;
    max-width: 450px;
-   padding: 0%;
+   padding: 10%;
+   display: grid;
+   align-items: center;
 }
 
 .new-contato-container .content form input {
    margin-top: 8px;
+   height: 40px;
 }
 .new-contato-container .content button{
    position: relative;
-} */
+   margin: 5px 50px auto;
+   width: 100px;
+   border: none;
+   background: yellow;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiTrash2, FiPlusCircle, FiChevronsRight } from 'react-icons/fi'
+import { FiTrash2, FiPlusCircle, FiChevronRight } from 'react-icons/fi'
 
 import api from '../../services/api';
 
@@ -16,6 +16,10 @@ export default function Agenda(){
    }, []);
 
    async function handleDeleteContato(id){
+      
+      var elemento = document.getElementById(id)
+      elemento.style.transform = 'translateX(-20%)';
+      
       try{
          await api.delete(`contato/${id}`);
 
@@ -27,32 +31,37 @@ export default function Agenda(){
    
    function moreInfo(id){
       var elemento = document.getElementById(id); 
-      if(elemento.style.display === 'block') {
+      if(elemento.style.display === 'flex') {
          elemento.style.display = 'none'; 
       }else{
-         elemento.style.display = 'block'; 
+         elemento.style.display = 'flex'; 
       }
    }
-   function rotateButton(idButton){
-      var elemento = document.getElementById(idButton); 
+   function rotateButton(id){
+      var elemento = document.getElementById(id); 
       if(elemento.style.transform === 'rotate(90deg)') {
          elemento.style.transform = 'none'; 
       }else{
          elemento.style.transform = 'rotate(90deg)'; 
       }
    } 
-   function more(id, idButton){
-      moreInfo(id)
-      rotateButton(idButton)
-   } 
    
+   function delay(idLi){
+      var elemento = document.getElementById(idLi)
+      elemento.style.transition = '0.7s';
+   }
+   function more(id, idButton){
+      moreInfo(id);
+      rotateButton(idButton);
+      delay(id)
+   } 
 
    return (
-      <div>
+      <div className="container">
          <header>
             <h1>Agenda</h1>
             <Link className="button" to="/new">
-               <FiPlusCircle size={30} color="black"/>
+               <FiPlusCircle className="FiPlusCircle" size={40}/>
             </Link>
          </header>
 
@@ -61,25 +70,29 @@ export default function Agenda(){
          <ul>
             {contatos.map(contato => (
                <li key={contato.id}>
-                  <div className="contato-info">
+                  <div className="contato-info" id={`${contato.id}`}>
                      <p className="name">{contato.name} {contato.lastname}</p>
                      <div className="more-info" id={`more-info${contato.id}`}>
                         <p className="email">{contato.email}</p>
                         <p className="number">{contato.number}</p>
-                        <FiTrash2 
-                           size={30}
-                           onClick={() => handleDeleteContato(contato.id)}
-                           type="button"
-                        />
                      </div>
                   </div>
-                  <FiChevronsRight 
-                     className="FiChevronsRight"
-                     size={30}
-                     id = {`button-more-info${contato.id}`}
-                     onClick={() => more(`more-info${contato.id}`, `button-more-info${contato.id}`)} 
-                     type="button"
-                  />
+                  <button>
+                     <FiTrash2 
+                        size={20}
+                        onClick={() => handleDeleteContato(contato.id)}
+                        type="button"
+                     />
+                  </button>
+                  <button>
+                     <FiChevronRight 
+                        className="FiChevronRight"
+                        size={20}
+                        id = {`button-more-info${contato.id}`}
+                        onClick={() => more(`more-info${contato.id}`, `button-more-info${contato.id}`)} 
+                        type="button"
+                     />
+                  </button>
                </li>
             ))}
          </ul>

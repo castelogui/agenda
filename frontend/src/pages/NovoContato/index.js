@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn, FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft } from 'react-icons/fi'
+import { GrLinkNext } from 'react-icons/gr';
 
 import api from '../../services/api';
+
+import './styles.css'
 
 export default function NewContato(){
    const [ name, setName ] = useState('');
@@ -35,10 +38,10 @@ export default function NewContato(){
       <div className="new-contato-container">
          <div className="content">
             <header>
-               <h1>NewContato</h1>
                <Link className="button" to="/">
-                  <FiArrowLeft size={20}/>
+                  <FiArrowLeft size={30}/>
                </Link>
+               <h1>NewContato</h1>
             </header>
             <form onSubmit={handleNewContato}>
                <input 
@@ -62,7 +65,7 @@ export default function NewContato(){
                   onChange={e => setNumber(e.target.value)}
                />
                <button className="button" type="submit">
-                  <FiLogIn size={20}/>
+                  <GrLinkNext size={20}/>
                </button>
             </form>
          </div>

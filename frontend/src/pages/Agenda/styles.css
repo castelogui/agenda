@@ -1,8 +1,50 @@
-li .contato-info .more-info {
-   display: none;
+.container{
+   height: 600px;
+   box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+}
+header{
+   margin: 20px auto;
+   top: 20px;
+   display: flexbox;
+   position: relative;
+}
+header .button{
+   color: rgb(255, 196, 0);
+   transition: 0.3s;
+   align-items: center;
+}
+ul{
+   margin-top: 20px;
+   display: grid;
+   gap: 20px;
+   grid-template-columns: 1fr 1fr;
+}
+li{
+   display: -webkit-flex;
+   margin-left: 10px;
+   margin-bottom: 30px;
 
 }
-
-li #button-more-info .FiChevronsRight{
+li .contato-info{
+   width: 300px;
+   box-shadow: 2px 2px 5px rgb(0,0,0);
+}
+li .contato-info .more-info {
+   display: none;
+}
+li button{
+   align-items: flex-end;
+   width: 30px;
+   height: 30px;
+   border: none;
+   background-color: transparent;
+}
+li .FiChevronRight{
+   padding: 2px;
    transform: none;
+   transition: 0.4s;
+}
+li p{
+   margin: 10px;
+   text-decoration: double;
 }
