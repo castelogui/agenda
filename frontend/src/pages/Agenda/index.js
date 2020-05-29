@@ -21,7 +21,6 @@ export default function Agenda(){
       elemento.style.backgroundColor = 'red';
       elemento.style.color = 'white';
 
-      
       try{
          await api.delete(`contato/${id}`);
 
@@ -56,43 +55,46 @@ export default function Agenda(){
       <div className="container">
          <header>
             <h1>Agenda</h1>
-            <Link className="button" to="/new">
-               <FiPlusCircle className="FiPlusCircle" size={40}/>
-            </Link>
          </header>
 
-         <h3>Contatos</h3>
-
-         <ul>
-            {contatos.map(contato => (
-               <li key={contato.id}>
-                  <div className="contato-info" id={`${contato.id}`}>
-                     <p className="name">{contato.name} {contato.lastname}</p>
-                     <div className="more-info" id={`more-info${contato.id}`}>
-                        <p className="email">{contato.email}</p>
-                        <p className="number">{contato.number}</p>
+         <div className="contatos-container">
+            <section>
+               <h3>Contatos</h3>
+               <Link className="button" to="/new">
+                  <FiPlusCircle className="FiPlusCircle" size={25}/>
+               </Link>
+            </section>
+            <ul>
+               {contatos.map(contato => (
+                  <li key={contato.id}>
+                     <div className="contato-info" id={`${contato.id}`}>
+                        <p className="name">{contato.name} {contato.lastname}</p>
+                        <div className="more-info" id={`more-info${contato.id}`}>
+                           <p className="email">{contato.email}</p>
+                           <p className="number">{contato.number}</p>
+                        </div>
                      </div>
-                  </div>
-                  <button>
-                     <FiTrash2 
-                        className="FiTrash2"
-                        size={20}
-                        onClick={() => handleDeleteContato(contato.id)}
-                        type="button"
-                     />
-                  </button>
-                  <button>
-                     <FiChevronRight 
-                        className="FiChevronRight"
-                        size={20}
-                        id = {`button-more-info${contato.id}`}
-                        onClick={() => more(`more-info${contato.id}`, `button-more-info${contato.id}`)} 
-                        type="button"
-                     />
-                  </button>
-               </li>
-            ))}
-         </ul>
+                     <button>
+                        <FiTrash2 
+                           className="FiTrash2"
+                           size={20}
+                           onClick={() => handleDeleteContato(contato.id)}
+                           type="button"
+                        />
+                     </button>
+                     <button>
+                        <FiChevronRight 
+                           className="FiChevronRight"
+                           size={20}
+                           id = {`button-more-info${contato.id}`}
+                           onClick={() => more(`more-info${contato.id}`, `button-more-info${contato.id}`)} 
+                           type="button"
+                        />
+                     </button>
+                  </li>
+               ))}
+            </ul>
+         </div>
       </div>   
    );
 }

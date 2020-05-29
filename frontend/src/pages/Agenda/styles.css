@@ -1,40 +1,56 @@
 .container{
-   height: 550px;
+   min-height: 500px;
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.466);
-   
+   margin-bottom: 30px;
+   padding: 5px;
 }
 header{
    margin: 20px auto;
-   top: 20px;
-   display: flexbox;
    position: relative;
 }
-header .button{
-   color: rgb(255, 196, 0);
-   transition: 0.3s;
+.contatos-container{
+   max-width: 400px;
+   min-height: 100px;
+   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.466);
+   margin: 20px;
+}
+.contatos-container section {
+   display: flex;
+   padding: 5px;
    align-items: center;
+   max-width: 300px;
+   position: relative;
+   left: 30%;
+   bottom: -10px;
+}
+.contatos-container section h3{
+   padding: 10px;
+}
+.contatos-container section .button{
+   color: rgb(255, 196, 0);
+   padding: 10px;
 }
 ul{
-   margin-top: 20px;
-   display: block;
-   gap: 20px;
-   grid-template-columns: 1fr 1fr;
+   display: grid;
+   position: relative;
+   align-items: center;
+   grid-template-columns: 1fr;
 }
-li{
-   display: inline-flex;
-   margin-left: 10px;
-   margin-bottom: 30px;
-
+ul li{
+   display: flex;
+   position: relative;
+   margin: 10px;
+   align-items: flex-start;
 }
-li .contato-info{
-   width: 500px;
+ul li .contato-info{
+   min-width: 375px;
    box-shadow: 2px 2px 5px rgb(0,0,0);
 }
-li .contato-info .more-info {
+ul li .contato-info .more-info {
    display: none;
    transition: 0.3s;
 }
-li button{
+ul li button{
    align-items: flex-end;
    width: 30px;
    height: 30px;
@@ -44,16 +60,16 @@ li button{
 .FiTrash2, .FiChevronRight{
    margin-left: -120px;
 }
-li .FiChevronRight{
+ul li .FiChevronRight{
    transform: none;
    transition: 0.3s;
 }
-li p{
+ul li p{
    margin: 10px;
    text-align: initial;
 }
-li .number{
+ul li .number{
    color: blue;
    text-decoration: underline;
    cursor: pointer;
-  }
+}

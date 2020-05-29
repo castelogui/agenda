@@ -1,6 +1,7 @@
 const connection = require('../database/connection');
 
 module.exports = {
+   // lista doso os contatos
    async index(request, response){
       const agenda = await connection('contatos')
          .select([
@@ -14,6 +15,7 @@ module.exports = {
       return response.json(agenda)
    },
    
+   // cria um novo contato na agenda
    async create(request, response){
       const {
          name,
