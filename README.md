@@ -13,7 +13,8 @@ Utilizei os conhecimentos adquiridos na Semana Omnistack, em especial a Semana O
 #### Tecnologias utilizadas:
 
 ```
-nodejs, cors, cross-env, express, knex, sqlite3, axios, react, react-dom, react-icons, react-router-dom, react-scripts 
+  Node.js
+  React.js
 ```
 
 ---
