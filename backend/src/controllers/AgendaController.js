@@ -32,5 +32,13 @@ module.exports = {
       })
 
       return response.json({ id, name });
+   },
+   // deleta um contato da agenda
+   async delete(request, response){
+      const { id } = request.params;
+
+      await connection('contatos').where('id', id).delete();
+
+      return response.status(204).send();
    }
 };

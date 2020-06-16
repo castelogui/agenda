@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft } from 'react-icons/fi';
 import { GrLinkNext } from 'react-icons/gr';
-
+import { Link, useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import './styles.css';
 
-import './styles.css'
+
 
 export default function NewContato(){
    const [ name, setName ] = useState('');
@@ -26,7 +26,7 @@ export default function NewContato(){
       };
 
       try {
-         await api.post('create', data)
+         await api.post('newcontato', data)
          history.push('/');
       } catch (err){
          alert(`Erro ao inserir${err}`)
