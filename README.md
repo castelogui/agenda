@@ -61,17 +61,36 @@ Assim que é adicionado um novo contato, o usuário é redirecionado para a _hom
 
 ### Execução
 
-Faça um clone com `git clone https://github.com/castelogui/agenda.git`
+É necessário ter [Git](https://git-scm.com/), [nodejs](https://nodejs.org/en/) e [react](https://pt-br.reactjs.org/) instalado em sua máquina
 
-É necessário ter o [nodejs](https://nodejs.org/en/) instalado em sua máquina
+Clone o repositório em sua máquina
+```bash
+# Faça um clone com 
+$ git clone https://github.com/castelogui/agenda.git
+```
 
-Instale as dependências nescessárias com `npm install` dentro do __backend__ e do __frontend__
+#### Backend
+Em `agenda/backend/`
+```bash
+# Instale as dependências nescessárias
+$ npm install
 
-Crie o banco de dados com `knex migrate:latest`
+# Rode as migrates para criação da base de dados
+$ npm run migrate
 
-Coloque o serviço da _api_ em execução com `npm start` de dentro do __backend__
+# Coloque a _api_ em execução
+$ npm start
+```
+#### Frontend
+Em `agenda/frontend/`
+```bash
+# Instale as dependências nescessárias
+$ npm install
 
-Coloque o _frontend_ em execução com `npm start` de dentro do __frontend__  
+# Coloque a  web em execução 
+$ npm start  
+
+```
 
 E pronto, adicione quantos contatos quiser :sweat_smile:
 
