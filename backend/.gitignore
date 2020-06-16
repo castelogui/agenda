@@ -1,6 +1,9 @@
+# ignore dependeces
 /node_modules
 
+# ignore logs from yarn
 yarn-debug.log*
 yarn-error.log*
 
+# ignore data base
 *.sqlite
