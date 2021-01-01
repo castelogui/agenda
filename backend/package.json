@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "migrate": "knex migrate:latest",
+    "down": "knex migrate:down",
+    "seed": "knex seed:run",
     "start": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "knex": "^0.21.1",
+    "knex": "^0.21.12",
+    "mysql": "^2.18.1",
     "sqlite3": "^4.2.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "devDependencies": {}
 }

@@ -1,6 +1,6 @@
 .container{
    min-height: 500px;
-   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.466);
+   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.466);
    margin-bottom: 30px;
    padding: 5px;
 }
@@ -8,13 +8,13 @@ header{
    margin: 20px auto;
    position: relative;
 }
-.contatos-container{
+.task-container{
    max-width: 400px;
    min-height: 100px;
-   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.466);
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
    margin: 20px;
 }
-.contatos-container section {
+.task-container section {
    display: flex;
    padding: 5px;
    align-items: center;
@@ -23,10 +23,10 @@ header{
    left: 30%;
    bottom: -10px;
 }
-.contatos-container section h3{
+.task-container section h3{
    padding: 10px;
 }
-.contatos-container section .button{
+.task-container section .button{
    color: rgb(255, 196, 0);
    padding: 10px;
 }
@@ -36,17 +36,20 @@ ul{
    align-items: center;
    grid-template-columns: 1fr;
 }
+ul li.task {
+   max-width: 250px;
+}
 ul li{
    display: flex;
    position: relative;
    margin: 10px;
    align-items: flex-start;
 }
-ul li .contato-info{
-   min-width: 375px;
+ul li .task-info{
+   min-width: 350px;
    box-shadow: 2px 2px 5px rgb(0,0,0);
 }
-ul li .contato-info .more-info {
+ul li .task-info .more-info {
    display: none;
    transition: 0.3s;
 }
@@ -57,8 +60,15 @@ ul li button{
    border: none;
    background-color: transparent;
 }
-.FiTrash2, .FiChevronRight{
-   margin-left: -120px;
+.FiXSquare, .FiChevronRight{
+   position: static;
+}
+.complete-task{
+   position: -webkit-sticky;
+   left: -30px;
+}
+.more-info{
+   left: -20px;
 }
 ul li .FiChevronRight{
    transform: none;
@@ -68,7 +78,7 @@ ul li p{
    margin: 10px;
    text-align: initial;
 }
-ul li .number{
+ul li .data{
    color: blue;
    text-decoration: underline;
    cursor: pointer;

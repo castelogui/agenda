@@ -3,12 +3,18 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'mysql',
     connection: {
-      filename: './src/database/db.sqlite'
+      host : 'localhost',
+      user : 'castelo',
+      password : 'admincastelo',
+      database : 'bd_agenda'
     },
     migrations: {
       directory: './src/database/migrations/'
+    },
+    seeds: {
+      directory: './src/database/seeds'
     },
     useNullAsDefault: true,
   },

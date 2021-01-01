@@ -1,4 +1,4 @@
-.new-contato-container {
+.new-task-container {
    max-width: 800px;
    display: inline-block;
    margin: 100px 20% auto;
@@ -6,7 +6,7 @@
    justify-content: center;
 }
 
-.new-contato-container .content {
+.new-task-container .content {
    height: 400px;
    padding: 120px;
    background: #fff;
@@ -14,15 +14,15 @@
    display: flex;
    align-items: center;
 }
-.new-contato-container .content header {
+.new-task-container .content header {
    margin-right: 60px;
 }
-.new-contato-container .content header h1 {
+.new-task-container .content header h1 {
    width: 200px;
    margin-left: 20px;
    font-size: 32px;
 }
-.new-contato-container .content form {
+.new-task-container .content form {
    width: 50%;
    max-width: 150px;
    position: relative;
@@ -32,11 +32,11 @@
    align-items: center;
 }
 
-.new-contato-container .content form input {
+.new-task-container .content form input {
    margin-top: 8px;
    height: 40px;
 }
-.new-contato-container .content button{
+.new-task-container .content button{
    position: relative;
    margin: 5px 50px auto;
    width: 100px;
