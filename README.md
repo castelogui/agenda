@@ -69,6 +69,23 @@ $ npm run seed
 # Coloque a _api_ em execução
 $ npm start
 ```
+Configure a conexão com um banco de dados em `backend/knexfile.js`
+
+No projeto utilizei o mysql mesmo, mas caso utilize outro banco visite [Knexjs](http://knexjs.org/) e procure o tipo de conexão para seu banco.
+
+```bash
+const knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host : '127.0.0.1',
+    user : 'your_database_user',
+    password : 'your_database_password',
+    database : 'your_database_name'
+  }
+});
+```
+
+
 #### Frontend
 Em `agenda/frontend/`
 ```bash
