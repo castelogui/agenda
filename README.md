@@ -55,20 +55,7 @@ $ git clone https://github.com/castelogui/agenda.git
 ```
 
 #### Backend
-Em `agenda/backend/`
-```bash
-# Instale as dependências nescessárias
-$ npm install
 
-# Rode as migrates
-$ npm run migrate
-
-# Rode as seeds 
-$ npm run seed
-
-# Coloque a _api_ em execução
-$ npm start
-```
 Configure a conexão com um banco de dados em `backend/knexfile.js`
 
 No projeto utilizei o mysql mesmo, mas caso utilize outro banco visite [Knexjs](http://knexjs.org/) e procure o tipo de conexão para seu banco.
@@ -85,6 +72,22 @@ const knex = require('knex')({
 });
 ```
 
+No terminal em `agenda/backend/`
+```bash
+# Instale as dependências nescessárias
+$ npm install
+
+# Rode as migrates
+$ npm run migrate
+
+# Rode as seeds 
+$ npm run seed
+
+# Coloque a _api_ em execução
+$ npm start
+```
+
+---
 
 #### Frontend
 Em `agenda/frontend/`
